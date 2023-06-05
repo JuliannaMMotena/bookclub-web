@@ -11,7 +11,7 @@ export const theme = extendTheme({
         fontFamily: 'Inter',
         padding: 0,
         margin: 0,
-        brackgroundColor: colors.background
+        backgroundColor: colors.background
       }
     }
   }
