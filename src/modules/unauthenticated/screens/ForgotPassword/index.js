@@ -13,7 +13,7 @@ export const ForgotPasswordScreen = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email('E-mail inválido')
+        .email('E-mail inválido.')
         .required('E-mail é obrigatório.')
     }),
     onSubmit: (data) => {
