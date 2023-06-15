@@ -22,7 +22,7 @@ export const ResetPasswordScreen = () => {
         isClosable: true
       })
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast({
         title: 'Senha salva com sucesso!',
         status: 'success',
@@ -84,7 +84,7 @@ export const ResetPasswordScreen = () => {
             onChange={handleChange}
             error={errors.token}
             mt="24px"
-            placeholder="Ex: 0000"
+            placeholder="Ex: 000000"
             maxLength={6}
           />
           <Input.Password
