@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
-import { Flex, Spinner } from '@chakra-ui/react'
-import { Text } from 'components/atoms'
+import { Flex } from '@chakra-ui/react'
+import { Text, EmptyMessage, Loader } from 'components/atoms'
 import { CategoryCard, BookCard } from 'components/molecules'
 import { getCategories, getBooksByCategory } from 'services/api/requests'
 
@@ -15,8 +15,6 @@ export const CategoryList = ({ title, categoryId }) => {
   } = useQuery(['booksById', selected], () => getBooksByCategory(selected), {
     enabled: !!selected
   })
-
-  console.log({ bookQuery })
 
   useEffect(() => {
     if (!selected && data?.data) {
@@ -69,15 +67,9 @@ export const CategoryList = ({ title, categoryId }) => {
         pb="48px"
         flexDir="row"
       >
-        {isLoading && (
-          <Flex alignItems="center" justifyContent="center" h="230px">
-            <Spinner />
-          </Flex>
-        )}
+        {isLoading && <Loader />}
         {!isLoading && bookQuery && bookQuery?.data?.length === 0 && (
-          <Flex alignItems="center" justifyContent="center" h="230px">
-            <Text>Nenhum livro encontrado</Text>
-          </Flex>
+          <EmptyMessage>Nenhum livro encontrado</EmptyMessage>
         )}
         {bookQuery &&
           bookQuery?.data.map((item) => (
