@@ -29,6 +29,7 @@ export const ForgotPasswordScreen = () => {
         isClosable: true
       })
       navigate(`/reset-password?email=${values.email}`)
+      console.log('oi', data)
     }
   })
 

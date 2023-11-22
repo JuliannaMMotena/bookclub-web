@@ -10,6 +10,7 @@ export const ResetPasswordScreen = () => {
   const navigate = useNavigate()
   const toast = useToast()
   const [searchParams] = useSearchParams()
+  console.log({searchParams})
 
   const mutation = useMutation((data) => resetPasswordCall(data), {
     onError: (error) => {

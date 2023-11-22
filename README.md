@@ -9,7 +9,7 @@ The user can search for books and authors, get their info and favorite the books
 
 ## Live Version
 
-xxxxxx - colocar link
+<https://bookclub-ochre.vercel.app/>
 
 ## Techs Used
 
@@ -26,7 +26,7 @@ xxxxxx - colocar link
 
 ```
 
-git clone xxxxxx - colocar
+git clone https://github.com/JuliannaMMotena/bookclub-web.git
 ```
 
 2. Navigate to project folder and install dependencies

@@ -54,6 +54,19 @@ export const UserModal = ({ onClose }) => {
   })
 
   const mutationAvatar = useMutation((data) => updateUserAvatar(data), {
+    onSuccess: (data) => {
+      toast({
+        title: 'Avatar do usuário atualizado com sucesso!',
+        status: 'success',
+        duration: 3000,
+        isClosable: true
+      })
+      dispatch(
+        setUser({
+          user: data?.data
+        })
+      )
+    },
     onError: (error) => {
       toast({
         title: 'Falha ao atualizar avatar do usuário.',
@@ -63,19 +76,6 @@ export const UserModal = ({ onClose }) => {
         duration: 3000,
         isClosable: true
       })
-    },
-    onSuccess: (data) => {
-      toast({
-        title: 'Avatar do usuário atualizado com sucesso!',
-        status: 'success',
-        duration: 6000,
-        isClosable: true
-      })
-      dispatch(
-        setUser({
-          user: data?.data
-        })
-      )
     }
   })
 
@@ -100,7 +100,7 @@ export const UserModal = ({ onClose }) => {
   const onChangeImage = async (event) => {
     const file = event?.target?.files[0]
     const type = file?.type
-
+    console.log(file, 'file')
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onload = () => {
