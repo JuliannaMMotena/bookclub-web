@@ -1,10 +1,10 @@
 import { Flex } from '@chakra-ui/react'
 import { Text } from 'components/atoms'
 
-export const CategoryCard = ({ onCLick, name, selected }) => {
+export const CategoryCard = ({ onClick, name, selected }) => {
   return (
     <Flex
-      onClick={onCLick}
+      onClick={onClick}
       alignItems="center"
       justifyContent="center"
       h="36px"
