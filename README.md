@@ -1,6 +1,6 @@
 # BookClub
 
-xxxxxx - colocar lance da imagem. Print....gravei vídeo a respeito para nao perder a explicação. Imagem do readme.
+<img src="https://github.com/JuliannaMMotena/bookclub-web/blob/main/public/preview.png" alt="BookClub Preview" height="186" width="283">
 
 ## Description
 
